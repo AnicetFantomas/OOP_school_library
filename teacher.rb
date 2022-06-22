@@ -3,8 +3,7 @@ class Teacher < Person
     def initialize (spetialization)
         @spetialization = spetialization
     end
-
-    def can_use_services?
-        true
-    end
 end
+
+services = Teacher.new("")
+puts services.can_use_services?
