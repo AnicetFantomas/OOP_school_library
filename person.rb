@@ -1,4 +1,6 @@
-class Person 
+require"./Namable.rb"
+
+class Person < Namable
     attr_reader :id, :name, :age
     attr_writer :name, :age
 
@@ -24,5 +26,9 @@ class Person
         else
             false
         end
+    end
+
+    def correct_name 
+        @name
     end
 end
