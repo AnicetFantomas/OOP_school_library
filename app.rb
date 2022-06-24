@@ -79,5 +79,43 @@ class App
           true
         end
       end
+
+      def create_teacher
+        print 'Age: '
+        age = gets.chomp
+        print 'Name: '
+        name = gets.chomp
+        print 'Specialization: '
+        specialization = gets.chomp
+        teacher = Teacher.new(age, name, nil, specialization)
+        @people.push(teacher)
+      end
+
+      def create_student
+        print 'Age: '
+        age = gets.chomp
+        print 'Name: '
+        name = gets.chomp
+        print 'Has parent permission? [Y/N]: '
+        permission = gets.chomp
+        student = Student.new(age, name, my_permission(permission), nil)
+        @people.push(student)
+      end
+
+      def create_person
+        print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
+        person_type = gets.chomp
+        case person_type
+        when '1'
+          create_student
+        when '2'
+          create_teacher
+        end
+        puts "Person created successfully\n"
+        gets
+        run
+      end
+
+      
     
 end
