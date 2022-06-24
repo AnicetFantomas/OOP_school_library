@@ -116,6 +116,42 @@ class App
         run
       end
 
+      def create_book
+        print 'Title: '
+        title = gets.chomp
+        print 'Author: '
+        author = gets.chomp
+        new_book = Book.new(title, author)
+        @my_books.push(new_book)
+        run
+      end
       
-    
+      def create_rental
+        puts "\nSelect a book from the following list by number"
+        list_books
+        book_index = gets.chomp
+        puts "\nSelect a person from the following list by number"
+        list_people
+        person_index = gets.chomp
+        print "\n Date(yyyy/mm/dd): "
+        rental_date = gets.chomp
+        new_rental = Rental.new(rental_date, @my_books[book_index.to_i], @people[person_index.to_i])
+        @my_rentals.push(new_rental)
+        puts 'Rental added successfully'
+        run
+      end
+
+      def list_rental
+        me = nil
+        print "\nID of person: "
+        person_id = gets.chomp
+        @people.each do |x|
+          me = x if x.id == person_id.to_i
+        end
+        me.rentals.each do |x|
+          puts x.date
+        end
+        puts
+        run
+      end  
 end
