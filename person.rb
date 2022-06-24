@@ -1,53 +1,38 @@
-<<<<<<< HEAD
-class Person
-  attr_reader :id
+require './nameable'
+
+class Person < Nameable
   attr_accessor :name, :age
+  attr_reader :id, :rentals
 
-  def initialize(age, name = 'unknown', parent_permission: true)
-    @id = Random.rand(1..1000)
-    @name = name
-    @age = age
-    @parent_permission = parent_permission
-  end
-<<<<<<< HEAD
-  
-=======
-require './Namable'
-
-class Person < Namable
-  attr_reader :id
-  attr_accessor :name, :age
-
-  def initialize(age, name = 'unknown', parent_permission: true)
+  def initialize(age, name = 'unknown', parent_permision: true)
     super()
     @id = Random.rand(1..1000)
     @name = name
     @age = age
-    @parent_permission = parent_permission
-  end
-=======
->>>>>>> 8b264764a516805fa2f406aa793a708232778265
-
-  private
-
-  def of_age
-    @age >= 18
-  end
-
-<<<<<<< HEAD
-  def can_use_services?
-    of_age || @parent_permission
+    @parent_permision = parent_permision
+    @rentals = []
   end
 
   def correct_name
     @name
   end
-end
->>>>>>> feature2
-=======
-  public :can_use_services?
+
   def can_use_services?
-    of_age? || @parent_permission
+    if of_age? || parent_permision
+      true
+    else
+      false
+    end
+  end
+
+  def add_rentals(rental)
+    @rentals.push(rental)
+    rental.person = self
+  end
+
+  private
+
+  def of_age?
+    @age >= 18
   end
 end
->>>>>>> 8b264764a516805fa2f406aa793a708232778265
