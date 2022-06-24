@@ -19,10 +19,6 @@ class Person < Nameable
 
   def can_use_services?
     if of_age? || parent_permision
-      true
-    else
-      false
-    end
   end
 
   def add_rentals(rental)
