@@ -63,5 +63,21 @@ class App
         gets.chomp
         run
       end
+
+      def action_list_people
+        puts 'Please create a book' if list_people.length <= 0
+        puts "\n\nPress any key to continue"
+        gets
+        run
+      end
+
+      def my_permission(my_char)
+        case my_char
+        when 'N'
+          false
+        when 'Y'
+          true
+        end
+      end
     
 end
