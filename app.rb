@@ -43,5 +43,25 @@ class App
           puts 'Thanks You, Bye Bye...'
           exit
         end
-    end      
+    end   
+    
+    def list_books
+        @my_books.each_with_index do |x, index|
+          puts "#{index}) Title: \"#{x.title}\", Author: #{x.author} "
+        end
+      end
+
+      def list_people
+        @people.each_with_index do |x, index|
+          puts "#{index}) [#{x.class.name}] Name: #{x.name}, ID: #{x.id}, Age: #{x.age}"
+        end
+      end
+
+      def action_list_books
+        puts 'Please create a book' if list_books.length <= 0
+        puts 'Press enter to continue ...'
+        gets.chomp
+        run
+      end
+    
 end
