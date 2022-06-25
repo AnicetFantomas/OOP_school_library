@@ -1,8 +1,11 @@
 require './person'
+
 class Teacher < Person
-  def initialize(age, spetialization, name = 'unknown', parent_permission: true)
+  attr_accessor :specialization
+
+  def initialize(age, name, parent_permission, specialization)
     super(age, name, parent_permission)
-    @spetialization = spetialization
+    @specialization = specialization
   end
 
   def can_use_services?
