@@ -23,7 +23,19 @@ class Person
     @name
   end
 
+<<<<<<< HEAD
   def add_rental(rental)
+=======
+  def can_use_services?
+    if of_age? || parent_permision
+      true
+    else
+      false
+    end
+  end
+
+  def add_rentals(rental)
+>>>>>>> 03ba00c14d7c5e6792e274047634b6e754aabd27
     @rentals.push(rental)
     rental.person = self
   end
