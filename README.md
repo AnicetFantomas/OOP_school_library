@@ -27,7 +27,7 @@ cd /school_library_oop
 
 In the project directory, you can run:
 
-**`run ruby <file-name>`**
+**`run ruby app.rb`**
 
 Gets all the required dependencies of the projects.
 
