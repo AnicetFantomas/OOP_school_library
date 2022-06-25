@@ -35,7 +35,7 @@ class App
       create_person
     when '4'
       create_book
-    when '5'
+    when '5' 
       create_rental
     when '6'
       list_rental
@@ -149,7 +149,7 @@ class App
       me = x if x.id == person_id.to_i
     end
     me.rentals.each do |x|
-      puts x.date
+      puts "Date: #{x.date}. Book: '#{x.book.title}' by #{x.book.author} "
     end
     puts
     run
