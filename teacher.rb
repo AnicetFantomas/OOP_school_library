@@ -1,8 +1,4 @@
 require './person'
-<<<<<<< HEAD
-=======
-
->>>>>>> feature2
 class Teacher < Person
   def initialize(age, spetialization, name = 'unknown', parent_permission: true)
     super(age, name, parent_permission)
