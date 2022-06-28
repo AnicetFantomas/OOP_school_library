@@ -35,7 +35,7 @@ class App
       create_person
     when '4'
       create_book
-    when '5' 
+    when '5'
       create_rental
     when '6'
       list_rental
