@@ -2,7 +2,7 @@
 
 # OOP_school_library
 
-> 
+> OOP_School_library is a simple ruby console application that uses object oriented programming concepts like classes, objects, inheritance to constructs a simple but yet powerful application. 
 
 
 ## Built With
